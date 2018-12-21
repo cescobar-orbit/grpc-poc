@@ -1,0 +1,21 @@
+
+ syntax = "proto3";
+ 
+ 
+ message DataSet {
+   string uid = 1;
+   string mindate = 2;
+   string maxdate = 3;
+   string name = 4;
+   int32 datacoverage = 5;
+   string id = 6;
+ }   
+
+ message DataSetReq { 
+   string mindate = 7;
+   string maxdate = 8;
+ }
+
+ service DataSetService { 
+   rpc get(DataSetReq) returns (stream DataSet){ } 
+ }

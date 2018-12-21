@@ -1,0 +1,22 @@
+
+ syntax = "proto3";
+
+
+ message RawDataReq {
+   string station = 1; 
+   string date = 2;
+ }
+
+ message RawData { 
+   string date = 3;
+   string datatype = 4;
+   string station = 5;
+   string attributes = 6;
+   float value = 7;
+ } 
+
+ service RawDataService { 
+   rpc get(RawDataReq) returns (stream RawData){ }
+ }  
+
+ 

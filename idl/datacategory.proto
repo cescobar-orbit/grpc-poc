@@ -1,0 +1,14 @@
+ syntax = "proto3";
+
+
+ message DataCategory {
+   int32 id = 1;
+   string name = 2;
+ }
+
+ message Empty { }
+
+ service DataCategoryService { 
+    rpc get(Empty) returns (stream DataCategory) { }
+    // Another methods may be here
+ }  

@@ -1,0 +1,22 @@
+
+ syntax = "proto3";
+ 
+
+ message Station { 
+  string id = 1;
+  string name = 2;
+  string mindate = 3;
+  string maxdate = 4;
+  float elevation = 5;
+  string elevationUnit = 6;
+  float longitude = 7;
+  float latitude = 8;
+ }
+
+ message Req { 
+   string id = 9;
+ }
+
+ service StationService { 
+   rpc get(Req) returns (stream Station) { }
+ }
