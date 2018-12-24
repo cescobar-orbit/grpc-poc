@@ -1,6 +1,7 @@
 
  syntax = "proto3";
  
+ package noaa;
 
  message Station { 
   string id = 1;
@@ -11,12 +12,15 @@
   string elevationUnit = 6;
   float longitude = 7;
   float latitude = 8;
- }
+ };
 
  message Req { 
    string id = 9;
- }
+ };
+
+ message Empty {};
 
  service StationService { 
-   rpc get(Req) returns (stream Station) { }
- }
+   rpc get(Req) returns (stream Station) {};
+   rpc send(Station) returns (Empty) {};  
+ };
