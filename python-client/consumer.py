@@ -11,7 +11,7 @@ def get_stations(stub):
         responses = stub.get(station.Empty())
         if responses:
             for response in responses:
-                print(response.station.name)
+                print(response)
      
     except:
         print("Unexpected error: ", sys.exc_info()[0])
