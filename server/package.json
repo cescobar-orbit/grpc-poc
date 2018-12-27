@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "grpcli -f ../idl/station.proto --ip=127.0.0.1 --port=50051 -i"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "@grpc/proto-loader": "^0.3.0",
     "axios": "^0.18.0",
     "grpc": "^1.17.0",
+    "grpcli": "^0.7.5",
     "uuid": "^3.3.2"
   }
 }

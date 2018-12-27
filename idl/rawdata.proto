@@ -2,24 +2,19 @@
  syntax = "proto3";
 
  package noaa;
- 
- message RawDataReq {
-   string station = 1; 
-   string date = 2;
- };
 
  message RawData { 
-   string date = 3;
-   string datatype = 4;
-   string station = 5;
-   string attributes = 6;
-   float value = 7;
+   string date = 1;
+   string datatype = 2;
+   string station = 3;
+   string attributes = 4;
+   float value = 5;
  };
 
  message Empty {};
  
  service RawDataService { 
-   rpc get(RawDataReq) returns (stream RawData){};
+   rpc get(Empty) returns (stream RawData){};
    rpc send(RawData) returns (Empty){}; 
 };  
 

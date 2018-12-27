@@ -12,15 +12,9 @@
    string id = 6;
  };   
 
- message DataSetReq { 
-   string mindate = 7;
-   string maxdate = 8;
- };
-
  message Empty {};
 
-
  service DataSetService { 
-   rpc get(DataSetReq) returns (stream DataSet){};
+   rpc get(Empty) returns (stream DataSet){};
    rpc send(DataSet) returns (DataSet){};
  };

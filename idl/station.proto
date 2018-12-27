@@ -14,13 +14,11 @@
   float latitude = 8;
  };
 
- message Req { 
-   string id = 9;
- };
+
 
  message Empty {};
 
  service StationService { 
-   rpc get(Req) returns (stream Station) {};
+   rpc get(Empty) returns (stream Station) {};
    rpc send(Station) returns (Empty) {};  
  };
